@@ -1,6 +1,6 @@
 package de.cas_ual_ty.ydm.card;
 
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 
@@ -26,7 +26,7 @@ public class ItemStackCardHolder extends CardHolder
     }
     
     @Override
-    public void setCard(Properties card)
+    public void setCard(YdmProperties card)
     {
         super.setCard(card);
         saveToItemStack();

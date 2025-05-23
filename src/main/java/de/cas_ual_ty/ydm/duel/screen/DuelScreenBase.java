@@ -1,6 +1,5 @@
 package de.cas_ual_ty.ydm.duel.screen;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.duel.DuelContainer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;

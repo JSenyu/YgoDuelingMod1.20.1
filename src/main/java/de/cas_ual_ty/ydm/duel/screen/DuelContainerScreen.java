@@ -1,11 +1,9 @@
 package de.cas_ual_ty.ydm.duel.screen;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.clientutil.ClientProxy;
 import de.cas_ual_ty.ydm.clientutil.ScreenUtil;
 import de.cas_ual_ty.ydm.clientutil.SwitchableContainerScreen;
-import de.cas_ual_ty.ydm.clientutil.widget.ITooltip;
 import de.cas_ual_ty.ydm.deckbox.DeckBoxScreen;
 import de.cas_ual_ty.ydm.deckbox.DeckHolder;
 import de.cas_ual_ty.ydm.duel.*;

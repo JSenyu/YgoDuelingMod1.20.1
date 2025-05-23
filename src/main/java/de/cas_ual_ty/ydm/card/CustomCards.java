@@ -7,42 +7,42 @@ import de.cas_ual_ty.ydm.rarity.Rarities;
 
 public class CustomCards
 {
-    public static LevelMonsterProperties PATREON_001_PROPERTIES;
+    public static LevelMonsterYdmProperties PATREON_001_PROPERTIES;
     public static CardHolder PATREON_001_CARD;
     
-    public static LevelMonsterProperties PATREON_002_PROPERTIES;
+    public static LevelMonsterYdmProperties PATREON_002_PROPERTIES;
     public static CardHolder PATREON_002_CARD;
     
-    public static LevelMonsterProperties PATREON_003_PROPERTIES;
+    public static LevelMonsterYdmProperties PATREON_003_PROPERTIES;
     public static CardHolder PATREON_003_CARD;
     
-    public static LevelMonsterProperties PATREON_004_PROPERTIES;
+    public static LevelMonsterYdmProperties PATREON_004_PROPERTIES;
     public static CardHolder PATREON_004_CARD;
     
-    public static LevelMonsterProperties PATREON_005_PROPERTIES;
+    public static LevelMonsterYdmProperties PATREON_005_PROPERTIES;
     public static CardHolder PATREON_005_CARD;
     
-    public static SpellProperties PATREON_006_PROPERTIES;
+    public static SpellYdmProperties PATREON_006_PROPERTIES;
     public static CardHolder PATREON_006_CARD;
     
-    public static SpellProperties PATREON_007_PROPERTIES;
+    public static SpellYdmProperties PATREON_007_PROPERTIES;
     public static CardHolder PATREON_007_CARD;
     
-    public static LevelMonsterProperties PATREON_008_PROPERTIES;
+    public static LevelMonsterYdmProperties PATREON_008_PROPERTIES;
     public static CardHolder PATREON_008_CARD;
     
-    public static LinkMonsterProperties PATREON_009_PROPERTIES;
+    public static LinkMonsterYdmProperties PATREON_009_PROPERTIES;
     public static CardHolder PATREON_009_CARD;
     
-    public static XyzMonsterProperties PATREON_010_PROPERTIES;
+    public static XyzMonsterYdmProperties PATREON_010_PROPERTIES;
     public static CardHolder PATREON_010_CARD;
     
-    public static LevelMonsterProperties PATREON_011_PROPERTIES;
+    public static LevelMonsterYdmProperties PATREON_011_PROPERTIES;
     public static CardHolder PATREON_011_CARD;
     
     public static void createAndRegisterEverything()
     {
-        CustomCards.PATREON_001_PROPERTIES = new LevelMonsterProperties();
+        CustomCards.PATREON_001_PROPERTIES = new LevelMonsterYdmProperties();
         CustomCards.PATREON_001_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_001_PROPERTIES.name = "Creator of Darkness - Set";
         CustomCards.PATREON_001_PROPERTIES.id = 1;
@@ -64,7 +64,7 @@ public class CustomCards
         CustomCards.PATREON_001_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_001_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_001_PROPERTIES); // Wants Secret Rare
         
-        CustomCards.PATREON_002_PROPERTIES = new LevelMonsterProperties();
+        CustomCards.PATREON_002_PROPERTIES = new LevelMonsterYdmProperties();
         CustomCards.PATREON_002_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_002_PROPERTIES.name = "Onomic: Wanderer With Two Tails";
         CustomCards.PATREON_002_PROPERTIES.id = 2;
@@ -86,7 +86,7 @@ public class CustomCards
         CustomCards.PATREON_002_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_002_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_002_PROPERTIES);
         
-        CustomCards.PATREON_003_PROPERTIES = new LevelMonsterProperties();
+        CustomCards.PATREON_003_PROPERTIES = new LevelMonsterYdmProperties();
         CustomCards.PATREON_003_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_003_PROPERTIES.name = "Onomic: Silent Fox";
         CustomCards.PATREON_003_PROPERTIES.id = 3;
@@ -111,7 +111,7 @@ public class CustomCards
         CustomCards.PATREON_003_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_003_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_003_PROPERTIES);
         
-        CustomCards.PATREON_004_PROPERTIES = new LevelMonsterProperties();
+        CustomCards.PATREON_004_PROPERTIES = new LevelMonsterYdmProperties();
         CustomCards.PATREON_004_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_004_PROPERTIES.name = "Onomic: Thousand Year Beast";
         CustomCards.PATREON_004_PROPERTIES.id = 4;
@@ -133,7 +133,7 @@ public class CustomCards
         CustomCards.PATREON_004_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_004_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_004_PROPERTIES);
         
-        CustomCards.PATREON_005_PROPERTIES = new LevelMonsterProperties();
+        CustomCards.PATREON_005_PROPERTIES = new LevelMonsterYdmProperties();
         CustomCards.PATREON_005_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_005_PROPERTIES.name = "Onomic: Firespreader";
         CustomCards.PATREON_005_PROPERTIES.id = 5;
@@ -158,7 +158,7 @@ public class CustomCards
         CustomCards.PATREON_005_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_005_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_005_PROPERTIES);
         
-        CustomCards.PATREON_006_PROPERTIES = new SpellProperties();
+        CustomCards.PATREON_006_PROPERTIES = new SpellYdmProperties();
         CustomCards.PATREON_006_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_006_PROPERTIES.name = "Onomic: Forest Fire";
         CustomCards.PATREON_006_PROPERTIES.id = 6;
@@ -171,7 +171,7 @@ public class CustomCards
         CustomCards.PATREON_006_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_006_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_006_PROPERTIES);
         
-        CustomCards.PATREON_007_PROPERTIES = new SpellProperties();
+        CustomCards.PATREON_007_PROPERTIES = new SpellYdmProperties();
         CustomCards.PATREON_007_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_007_PROPERTIES.name = "Onomic: Savior";
         CustomCards.PATREON_007_PROPERTIES.id = 7;
@@ -184,7 +184,7 @@ public class CustomCards
         CustomCards.PATREON_007_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_007_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_007_PROPERTIES);
         
-        CustomCards.PATREON_008_PROPERTIES = new LevelMonsterProperties();
+        CustomCards.PATREON_008_PROPERTIES = new LevelMonsterYdmProperties();
         CustomCards.PATREON_008_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_008_PROPERTIES.name = "Onomic: Haragi, The Lone Wolf";
         CustomCards.PATREON_008_PROPERTIES.id = 8;
@@ -206,7 +206,7 @@ public class CustomCards
         CustomCards.PATREON_008_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_008_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_008_PROPERTIES);
         
-        CustomCards.PATREON_009_PROPERTIES = new LinkMonsterProperties();
+        CustomCards.PATREON_009_PROPERTIES = new LinkMonsterYdmProperties();
         CustomCards.PATREON_009_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_009_PROPERTIES.name = "Cybeast Corruption Dragon";
         CustomCards.PATREON_009_PROPERTIES.id = 9;
@@ -227,7 +227,7 @@ public class CustomCards
         CustomCards.PATREON_009_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_009_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_009_PROPERTIES);
         
-        CustomCards.PATREON_010_PROPERTIES = new XyzMonsterProperties();
+        CustomCards.PATREON_010_PROPERTIES = new XyzMonsterYdmProperties();
         CustomCards.PATREON_010_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_010_PROPERTIES.name = "Jin Mori - Monkey King";
         CustomCards.PATREON_010_PROPERTIES.id = 10;
@@ -248,7 +248,7 @@ public class CustomCards
         CustomCards.PATREON_010_CARD = CustomCards.createPatreonCard(CustomCards.PATREON_010_PROPERTIES);
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_010_PROPERTIES);
         
-        CustomCards.PATREON_011_PROPERTIES = new LevelMonsterProperties();
+        CustomCards.PATREON_011_PROPERTIES = new LevelMonsterYdmProperties();
         CustomCards.PATREON_011_PROPERTIES.isHardcoded = true;
         CustomCards.PATREON_011_PROPERTIES.name = "Drake Lockheart - Jedi Knight";
         CustomCards.PATREON_011_PROPERTIES.id = 11;
@@ -271,7 +271,7 @@ public class CustomCards
         YdmDatabase.PROPERTIES_LIST.add(CustomCards.PATREON_011_PROPERTIES);
     }
     
-    public static CardHolder createPatreonCard(Properties c) // add rarity here as parameter
+    public static CardHolder createPatreonCard(YdmProperties c) // add rarity here as parameter
     {
         return new CardHolder(c, (byte) 0, Rarities.COMMON.name, "PATREON-" + c.id);
     }

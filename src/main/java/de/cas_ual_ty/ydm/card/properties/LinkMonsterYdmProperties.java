@@ -10,30 +10,30 @@ import net.minecraft.network.chat.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LinkMonsterProperties extends MonsterProperties
+public class LinkMonsterYdmProperties extends MonsterYdmProperties
 {
     public byte linkRating;
     public List<LinkArrow> linkArrows;
     
-    public LinkMonsterProperties(Properties p0, JsonObject j)
+    public LinkMonsterYdmProperties(YdmProperties p0, JsonObject j)
     {
         super(p0);
         readLinkMonsterProperties(j);
     }
     
-    public LinkMonsterProperties(Properties p0)
+    public LinkMonsterYdmProperties(YdmProperties p0)
     {
         super(p0);
         
-        if(p0 instanceof LinkMonsterProperties)
+        if(p0 instanceof LinkMonsterYdmProperties)
         {
-            LinkMonsterProperties p1 = (LinkMonsterProperties) p0;
+            LinkMonsterYdmProperties p1 = (LinkMonsterYdmProperties) p0;
             linkRating = p1.linkRating;
             linkArrows = p1.linkArrows;
         }
     }
     
-    public LinkMonsterProperties()
+    public LinkMonsterYdmProperties()
     {
     }
     

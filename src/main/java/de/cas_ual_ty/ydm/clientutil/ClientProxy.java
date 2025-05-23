@@ -1,12 +1,9 @@
 package de.cas_ual_ty.ydm.clientutil;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Maps;
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.*;
 import de.cas_ual_ty.ydm.card.*;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.cardbinder.CardBinderScreen;
 import de.cas_ual_ty.ydm.carditeminventory.CIIContainer;
 import de.cas_ual_ty.ydm.carditeminventory.CIIScreen;
@@ -43,7 +40,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -278,15 +274,15 @@ public class ClientProxy implements ISidedProxy
     }
     
     @Override
-    public String getCardInfoReplacementImage(Properties properties, byte imageIndex)
+    public String getCardInfoReplacementImage(YdmProperties ydmProperties, byte imageIndex)
     {
-        return ImageHandler.getInfoReplacementImage(properties, imageIndex);
+        return ImageHandler.getInfoReplacementImage(ydmProperties, imageIndex);
     }
     
     @Override
-    public String getCardMainReplacementImage(Properties properties, byte imageIndex)
+    public String getCardMainReplacementImage(YdmProperties ydmProperties, byte imageIndex)
     {
-        return ImageHandler.getMainReplacementImage(properties, imageIndex);
+        return ImageHandler.getMainReplacementImage(ydmProperties, imageIndex);
     }
     
     @Override
@@ -445,26 +441,25 @@ public class ClientProxy implements ISidedProxy
     private void modelBake(ModelEvent.BakingCompleted   event)
     {
         YDM.log("Baking models (size: " + ClientProxy.activeCardItemImageSize + ") for " + YdmItems.BLANC_CARD.getId().toString() + " and " + YdmItems.CARD_BACK.getId().toString());
-
+        ModelResourceLocation key;
 
         // 16 is default texture; no need to do anything special in that case
-        if(ClientProxy.activeCardItemImageSize != 16)
-        {
-            event.getModels().put(new ModelResourceLocation(YdmItems.BLANC_CARD.getId(), "inventory"),
+        if(ClientProxy.activeCardItemImageSize != 16) {
+
+
+            event.getModelBakery().getBakedTopLevelModels().put(new ModelResourceLocation(YdmItems.BLANC_CARD.getId(), "inventory"),
                     event.getModelManager().getModel(
                             new ModelResourceLocation(
                                     new ResourceLocation(YdmItems.BLANC_CARD.getId().toString() + "_" + ClientProxy.activeCardItemImageSize), "inventory")));
 
-            event.getModels().put(new ModelResourceLocation(YdmItems.CARD_BACK.getId(), "inventory"),
+            event.getModelBakery().getBakedTopLevelModels().put(new ModelResourceLocation(YdmItems.CARD_BACK.getId(), "inventory"),
                     event.getModelManager().getModel(
                             new ModelResourceLocation(
                                     new ResourceLocation(YdmItems.CARD_BACK.getId().toString() + "_" + ClientProxy.activeCardItemImageSize), "inventory")));
 
-            for(CardSleevesType sleeves : CardSleevesType.VALUES)
-            {
-                if(!sleeves.isCardBack())
-                {
-                    event.getModels().put(new ModelResourceLocation(new ResourceLocation(YDM.MOD_ID, "sleeves_" + sleeves.name), "inventory"),
+            for(CardSleevesType sleeves : CardSleevesType.VALUES) {
+                if(!sleeves.isCardBack()) {
+                    event.getModelBakery().getBakedTopLevelModels().put(new ModelResourceLocation(new ResourceLocation(YDM.MOD_ID, "sleeves_" + sleeves.name), "inventory"),
                             event.getModelManager().getModel(
                                     new ModelResourceLocation(
                                             sleeves.getItemModelRL(ClientProxy.activeCardItemImageSize), "inventory")));
@@ -480,7 +475,7 @@ public class ClientProxy implements ISidedProxy
                                     new ResourceLocation(YdmItems.BLANC_SET.getId().toString() + "_" + ClientProxy.activeSetItemImageSize), "inventory")));
         }
 
-        ModelResourceLocation key = new ModelResourceLocation(YdmItems.CARD.getId(), "inventory");
+        key = new ModelResourceLocation(YdmItems.CARD.getId(), "inventory");
 //        event.getModels().put(key, new CardBakedModel(event.getModelManager().getModel(key)));
         event.getModelBakery().getBakedTopLevelModels().put(key, new CardBakedModel(event.getModelManager().getModel(key)));
 

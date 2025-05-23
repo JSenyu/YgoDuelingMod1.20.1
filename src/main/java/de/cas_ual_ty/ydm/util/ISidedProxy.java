@@ -2,7 +2,7 @@ package de.cas_ual_ty.ydm.util;
 
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.card.CardHolder;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.rarity.RarityLayer;
 import de.cas_ual_ty.ydm.set.CardSet;
 import net.minecraft.world.entity.player.Player;
@@ -71,12 +71,12 @@ public interface ISidedProxy
         return null;
     }
     
-    default String getCardInfoReplacementImage(Properties properties, byte imageIndex)
+    default String getCardInfoReplacementImage(YdmProperties ydmProperties, byte imageIndex)
     {
         return null;
     }
     
-    default String getCardMainReplacementImage(Properties properties, byte imageIndex)
+    default String getCardMainReplacementImage(YdmProperties ydmProperties, byte imageIndex)
     {
         return null;
     }

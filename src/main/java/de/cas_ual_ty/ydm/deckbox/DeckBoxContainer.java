@@ -2,7 +2,7 @@ package de.cas_ual_ty.ydm.deckbox;
 
 import de.cas_ual_ty.ydm.YdmItems;
 import de.cas_ual_ty.ydm.card.CardSleevesItem;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.util.YDMItemHandler;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -128,7 +128,7 @@ public class DeckBoxContainer extends AbstractContainerMenu
         {
             //inventory to deck box
             
-            Properties card = YdmItems.CARD.get().getCardHolder(original).getCard();
+            YdmProperties card = YdmItems.CARD.get().getCardHolder(original).getCard();
             boolean isExtraDeck = card.getIsInExtraDeck();
             
             int minTarget;

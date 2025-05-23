@@ -2,7 +2,6 @@ package de.cas_ual_ty.ydm.duel.screen.animation;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.clientutil.ClientProxy;
 import de.cas_ual_ty.ydm.clientutil.YdmBlitUtil;

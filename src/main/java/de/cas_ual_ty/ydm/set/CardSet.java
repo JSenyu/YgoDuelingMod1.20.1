@@ -5,22 +5,19 @@ import com.google.common.collect.ImmutableSet;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.mojang.blaze3d.platform.NativeImage;
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.YdmDatabase;
 import de.cas_ual_ty.ydm.card.CardHolder;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
+import de.cas_ual_ty.ydm.clientutil.ClientResouresLocationGet;
 import de.cas_ual_ty.ydm.util.JsonKeys;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.SortedArraySet;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.text.ParseException;
 import java.util.*;
 
@@ -144,7 +141,7 @@ public class CardSet
             
             JsonObject c;
             long id;
-            Properties card;
+            YdmProperties card;
             byte imageIndex;
             String rarity;
             for(JsonElement e : cards)
@@ -246,33 +243,39 @@ public class CardSet
     {
         return YDM.proxy.addSetItemTag(getImageName());
     }
-    
-    public ResourceLocation getInfoImageResourceLocation() {
-        try {
-            Path path = Path.of("ydm_db_images/sets/" + YDM.proxy.getSetInfoReplacementImage(this) + ".png");
-            NativeImage image = NativeImage.read(Files.newInputStream(path));
-            DynamicTexture dynTex = new DynamicTexture(image);
-            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getSetInfoReplacementImage(this) + ".png");
-            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
-            return resourceLocation;
-        } catch (IOException e) {
-            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getSetInfoReplacementImage(this) + ".png");
-        }
-//        return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getSetInfoReplacementImage(this) + ".png");
-    }
-    
-    public ResourceLocation getItemImageResourceLocation() {
-        try {
-            Path path = Path.of("ydm_db_images/sets/" + getItemImageName() + ".png");
-            NativeImage image = NativeImage.read(Files.newInputStream(path));
-            DynamicTexture dynTex = new DynamicTexture(image);
-            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + getItemImageName() + ".png");
-            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
-            return resourceLocation;
 
-        } catch (IOException e) {
-            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + getItemImageName() + ".png");
-        }
+    @OnlyIn(Dist.CLIENT)
+    public ResourceLocation getInfoImageResourceLocation() {
+        return ClientResouresLocationGet.getClientResouresLocation("sets", YDM.proxy.getSetInfoReplacementImage(this));
+
+//        try {
+//            Path path = Path.of("ydm_db_images/sets/" + YDM.proxy.getSetInfoReplacementImage(this) + ".png");
+//            NativeImage image = NativeImage.read(Files.newInputStream(path));
+//            DynamicTexture dynTex = new DynamicTexture(image);
+//            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getSetInfoReplacementImage(this) + ".png");
+//            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
+//            return resourceLocation;
+//        } catch (IOException e) {
+//            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getSetInfoReplacementImage(this) + ".png");
+//        }
+////        return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getSetInfoReplacementImage(this) + ".png");
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public ResourceLocation getItemImageResourceLocation() {
+        return ClientResouresLocationGet.getClientResouresLocation("sets", getItemImageName());
+
+//        try {
+//            Path path = Path.of("ydm_db_images/sets/" + getItemImageName() + ".png");
+//            NativeImage image = NativeImage.read(Files.newInputStream(path));
+//            DynamicTexture dynTex = new DynamicTexture(image);
+//            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + getItemImageName() + ".png");
+//            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
+//            return resourceLocation;
+//
+//        } catch (IOException e) {
+//            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + getItemImageName() + ".png");
+//        }
 //        return new ResourceLocation(YDM.MOD_ID, "item/" + getItemImageName());
     }
     

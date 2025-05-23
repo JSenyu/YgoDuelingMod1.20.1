@@ -1,17 +1,13 @@
 package de.cas_ual_ty.ydm.cardbinder;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.BufferUploader;
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.card.CardHolder;
-import de.cas_ual_ty.ydm.clientutil.CardRenderUtil;
 import de.cas_ual_ty.ydm.clientutil.ScreenUtil;
 import de.cas_ual_ty.ydm.clientutil.YdmBlitUtil;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.network.chat.Component;
-import org.joml.Matrix4f;
 
 import java.util.function.BiConsumer;
 import java.util.function.Function;

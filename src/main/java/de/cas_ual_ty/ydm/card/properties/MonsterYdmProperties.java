@@ -9,7 +9,7 @@ import net.minecraft.network.chat.Style;
 
 import java.util.List;
 
-public class MonsterProperties extends Properties
+public class MonsterYdmProperties extends YdmProperties
 {
     public String attribute;
     public int atk;
@@ -24,19 +24,19 @@ public class MonsterProperties extends Properties
     public byte pendulumScaleLeftBlue;
     public byte pendulumScaleRightRed;
     
-    public MonsterProperties(Properties p0, JsonObject j)
+    public MonsterYdmProperties(YdmProperties p0, JsonObject j)
     {
         super(p0);
         readMonsterProperties(j);
     }
     
-    public MonsterProperties(Properties p0)
+    public MonsterYdmProperties(YdmProperties p0)
     {
         super(p0);
         
-        if(p0 instanceof MonsterProperties)
+        if(p0 instanceof MonsterYdmProperties)
         {
-            MonsterProperties p1 = (MonsterProperties) p0;
+            MonsterYdmProperties p1 = (MonsterYdmProperties) p0;
             attribute = p1.attribute;
             atk = p1.atk;
             species = p1.species;
@@ -54,7 +54,7 @@ public class MonsterProperties extends Properties
         }
     }
     
-    public MonsterProperties()
+    public MonsterYdmProperties()
     {
     }
     

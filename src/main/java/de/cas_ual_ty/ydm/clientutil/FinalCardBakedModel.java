@@ -6,12 +6,11 @@ import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.YdmDatabase;
 import de.cas_ual_ty.ydm.YdmItems;
 import de.cas_ual_ty.ydm.card.CardHolder;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.block.model.BlockElement;
 import net.minecraft.client.renderer.block.model.ItemOverrides;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
@@ -25,15 +24,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.SimpleModelState;
 import net.minecraftforge.client.model.geometry.UnbakedGeometryHelper;
 import org.jetbrains.annotations.Nullable;
-import org. joml. Quaternionf;
+import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.Function;
-
-import static net.minecraft.world.item.ItemDisplayContext.*;
 
 @SuppressWarnings("deprecation")
 public class FinalCardBakedModel implements BakedModel
@@ -46,7 +43,7 @@ public class FinalCardBakedModel implements BakedModel
     private List<BakedQuad> partneredBackList = null;
     private List<BakedQuad> blancList = null;
     
-    private HashMap<Properties, List<BakedQuad>> quadsMap;
+    private HashMap<YdmProperties, List<BakedQuad>> quadsMap;
     
     public FinalCardBakedModel(BakedModel mainModel)
     {

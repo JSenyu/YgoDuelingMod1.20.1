@@ -6,28 +6,28 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public class SpellProperties extends Properties
+public class SpellYdmProperties extends YdmProperties
 {
     public SpellType spellType;
     
-    public SpellProperties(Properties p0, JsonObject j)
+    public SpellYdmProperties(YdmProperties p0, JsonObject j)
     {
         super(p0);
         readSpellProperties(j);
     }
     
-    public SpellProperties(Properties p0)
+    public SpellYdmProperties(YdmProperties p0)
     {
         super(p0);
         
-        if(p0 instanceof SpellProperties)
+        if(p0 instanceof SpellYdmProperties)
         {
-            SpellProperties p1 = (SpellProperties) p0;
+            SpellYdmProperties p1 = (SpellYdmProperties) p0;
             spellType = p1.spellType;
         }
     }
     
-    public SpellProperties()
+    public SpellYdmProperties()
     {
     }
     

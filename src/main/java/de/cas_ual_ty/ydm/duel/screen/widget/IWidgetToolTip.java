@@ -3,7 +3,6 @@ package de.cas_ual_ty.ydm.duel.screen.widget;
 import de.cas_ual_ty.ydm.clientutil.widget.ITooltip;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
-import org.jline.reader.Widget;
 
 public interface IWidgetToolTip {
 

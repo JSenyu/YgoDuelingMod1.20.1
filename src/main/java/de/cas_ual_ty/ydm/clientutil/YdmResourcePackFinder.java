@@ -2,7 +2,6 @@ package de.cas_ual_ty.ydm.clientutil;
 
 import de.cas_ual_ty.ydm.YDM;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.packs.PackResources;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
@@ -11,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class YdmResourcePackFinder implements RepositorySource {
     @Override

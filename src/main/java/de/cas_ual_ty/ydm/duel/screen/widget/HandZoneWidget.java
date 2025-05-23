@@ -1,6 +1,5 @@
 package de.cas_ual_ty.ydm.duel.screen.widget;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.clientutil.ScreenUtil;
 import de.cas_ual_ty.ydm.clientutil.widget.ITooltip;
 import de.cas_ual_ty.ydm.duel.playfield.DuelCard;
@@ -8,8 +7,6 @@ import de.cas_ual_ty.ydm.duel.playfield.Zone;
 import de.cas_ual_ty.ydm.duel.screen.DuelScreenDueling;
 import de.cas_ual_ty.ydm.duel.screen.IDuelScreenContext;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Tooltip;
-import net.minecraft.network.chat.Component;
 
 import javax.annotation.Nullable;
 import java.util.function.Consumer;

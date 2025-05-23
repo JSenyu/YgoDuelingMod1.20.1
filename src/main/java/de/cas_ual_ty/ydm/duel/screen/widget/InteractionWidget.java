@@ -1,6 +1,5 @@
 package de.cas_ual_ty.ydm.duel.screen.widget;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import de.cas_ual_ty.ydm.clientutil.ScreenUtil;
 import de.cas_ual_ty.ydm.clientutil.YdmBlitUtil;
 import de.cas_ual_ty.ydm.clientutil.widget.ITooltip;
@@ -9,10 +8,8 @@ import de.cas_ual_ty.ydm.duel.playfield.ZoneInteraction;
 import de.cas_ual_ty.ydm.duel.screen.IDuelScreenContext;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.network.chat.Component;
 
-import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
 public class InteractionWidget extends Button implements IWidgetToolTip{

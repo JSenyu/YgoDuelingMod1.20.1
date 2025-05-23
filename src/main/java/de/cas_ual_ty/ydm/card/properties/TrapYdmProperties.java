@@ -6,28 +6,28 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public class TrapProperties extends Properties
+public class TrapYdmProperties extends YdmProperties
 {
     public TrapType trapType;
     
-    public TrapProperties(Properties p0, JsonObject j)
+    public TrapYdmProperties(YdmProperties p0, JsonObject j)
     {
         super(p0);
         readTrapProperties(j);
     }
     
-    public TrapProperties(Properties p0)
+    public TrapYdmProperties(YdmProperties p0)
     {
         super(p0);
         
-        if(p0 instanceof TrapProperties)
+        if(p0 instanceof TrapYdmProperties)
         {
-            TrapProperties p1 = (TrapProperties) p0;
+            TrapYdmProperties p1 = (TrapYdmProperties) p0;
             trapType = p1.trapType;
         }
     }
     
-    public TrapProperties()
+    public TrapYdmProperties()
     {
     }
     

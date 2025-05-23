@@ -2,24 +2,21 @@ package de.cas_ual_ty.ydm.card.properties;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.mojang.blaze3d.platform.NativeImage;
 import de.cas_ual_ty.ydm.YDM;
+import de.cas_ual_ty.ydm.clientutil.ClientResouresLocationGet;
 import de.cas_ual_ty.ydm.util.JsonKeys;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 
-public class Properties
-{
-    public static final Properties DUMMY = new Properties()
+public class YdmProperties {
+
+    public static final YdmProperties DUMMY = new YdmProperties()
     {
         @Override
         public String getImageName(byte imageIndex)
@@ -36,14 +33,14 @@ public class Properties
     
     static
     {
-        Properties.DUMMY.isHardcoded = true;
-        Properties.DUMMY.name = "Dummy";
-        Properties.DUMMY.id = 0;
-        Properties.DUMMY.isIllegal = false;
-        Properties.DUMMY.isCustom = true;
-        Properties.DUMMY.text = "This is a replacement card!";
-        Properties.DUMMY.type = null;
-        Properties.DUMMY.images = null;
+        YdmProperties.DUMMY.isHardcoded = true;
+        YdmProperties.DUMMY.name = "Dummy";
+        YdmProperties.DUMMY.id = 0;
+        YdmProperties.DUMMY.isIllegal = false;
+        YdmProperties.DUMMY.isCustom = true;
+        YdmProperties.DUMMY.text = "This is a replacement card!";
+        YdmProperties.DUMMY.type = null;
+        YdmProperties.DUMMY.images = null;
     }
     
     public boolean isHardcoded;
@@ -57,7 +54,7 @@ public class Properties
     
     protected int imageIndicesAmt;
     
-    public Properties(Properties p0)
+    public YdmProperties(YdmProperties p0)
     {
         isHardcoded = false;
         name = p0.name;
@@ -70,14 +67,14 @@ public class Properties
         imageIndicesAmt = images.length;
     }
     
-    public Properties(JsonObject j)
+    public YdmProperties(JsonObject j)
     {
         isHardcoded = false;
         readAllProperties(j);
         imageIndicesAmt = 1;
     }
     
-    public Properties()
+    public YdmProperties()
     {
         isHardcoded = false;
         imageIndicesAmt = 1;
@@ -203,50 +200,57 @@ public class Properties
     {
         return YDM.proxy.addCardMainTag(getImageName(imageIndex));
     }
-    
-    public ResourceLocation getInfoImageResourceLocation(byte imageIndex)
-    {
-        try {
-            Path path = Path.of("ydm_db_images/cards/" + YDM.proxy.getCardInfoReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
-            NativeImage image = NativeImage.read(Files.newInputStream(path));
-            DynamicTexture dynTex = new DynamicTexture(image);
-            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardInfoReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
-            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
-            return resourceLocation;
 
-        } catch (IOException e) {
-            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardInfoReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
-        }
+    @OnlyIn(Dist.CLIENT)
+    public ResourceLocation getInfoImageResourceLocation(byte imageIndex) {
+        return ClientResouresLocationGet.getClientResouresLocation("cards", YDM.proxy.getCardInfoReplacementImage(this, adjustImageIndex(imageIndex)));
+
+//        try {
+//            Path path = Path.of("ydm_db_images/cards/" + YDM.proxy.getCardInfoReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
+//            NativeImage image = NativeImage.read(Files.newInputStream(path));
+//            DynamicTexture dynTex = new DynamicTexture(image);
+//            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardInfoReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
+//            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
+//            return resourceLocation;
+//
+//        } catch (IOException e) {
+//            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardInfoReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
+//        }
     }
-    
-    public ResourceLocation getItemImageResourceLocation(byte imageIndex)
-    {
-        try {
-            Path path = Path.of("ydm_db_images/cards/" + getItemImageName(imageIndex) + ".png");
-            NativeImage image = NativeImage.read(Files.newInputStream(path));
-            DynamicTexture dynTex = new DynamicTexture(image);
-            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + getItemImageName(imageIndex) + ".png");
-            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
-            return resourceLocation;
 
-        } catch (IOException e) {
-            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + getItemImageName(imageIndex) + ".png");
-        }
+    @OnlyIn(Dist.CLIENT)
+    public ResourceLocation getItemImageResourceLocation(byte imageIndex) {
+        return ClientResouresLocationGet.getClientResouresLocation("cards", getItemImageName(imageIndex));
+
+//        try {
+//            Path path = Path.of("ydm_db_images/cards/" + getItemImageName(imageIndex) + ".png");
+//            NativeImage image = NativeImage.read(Files.newInputStream(path));
+//            DynamicTexture dynTex = new DynamicTexture(image);
+//            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + getItemImageName(imageIndex) + ".png");
+//            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
+//            return resourceLocation;
+//
+//        } catch (IOException e) {
+//            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + getItemImageName(imageIndex) + ".png");
+//        }
 //        return new ResourceLocation(YDM.MOD_ID, "item/" + getItemImageName(imageIndex));
     }
-    
-    public ResourceLocation getMainImageResourceLocation(byte imageIndex) {
-        try {
-            Path path = Path.of("ydm_db_images/cards/" + YDM.proxy.getCardMainReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
-            NativeImage image = NativeImage.read(Files.newInputStream(path));
-            DynamicTexture dynTex = new DynamicTexture(image);
-            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardMainReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
-            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
-            return resourceLocation;
 
-        } catch (IOException e) {
-            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardMainReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
-        }
+    @OnlyIn(Dist.CLIENT)
+    public ResourceLocation getMainImageResourceLocation(byte imageIndex) {
+        return ClientResouresLocationGet.getClientResouresLocation("cards", YDM.proxy.getCardMainReplacementImage(this, adjustImageIndex(imageIndex)));
+
+//        try {
+//            Path path = Path.of("ydm_db_images/cards/" + YDM.proxy.getCardMainReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
+//            NativeImage image = NativeImage.read(Files.newInputStream(path));
+//            DynamicTexture dynTex = new DynamicTexture(image);
+//            ResourceLocation resourceLocation = new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardMainReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
+//            Minecraft.getInstance().getTextureManager().register(resourceLocation, dynTex);
+//            return resourceLocation;
+//
+//        } catch (IOException e) {
+//            return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardMainReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
+//        }
 //        return new ResourceLocation(YDM.MOD_ID, "textures/item/" + YDM.proxy.getCardMainReplacementImage(this, adjustImageIndex(imageIndex)) + ".png");
     }
     

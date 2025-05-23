@@ -1,12 +1,10 @@
 package de.cas_ual_ty.ydm.duel.screen.widget;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.clientutil.widget.ITooltip;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.network.chat.Component;
-import org.jline.reader.Widget;
 
 
 public class LPTextFieldWidget extends EditBox

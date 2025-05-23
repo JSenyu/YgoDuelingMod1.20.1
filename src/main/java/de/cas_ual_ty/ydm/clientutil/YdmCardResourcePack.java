@@ -1,7 +1,6 @@
 package de.cas_ual_ty.ydm.clientutil;
 
 import com.google.common.base.CharMatcher;
-import com.google.common.collect.ImmutableSet;
 import com.google.gson.JsonObject;
 import de.cas_ual_ty.ydm.YDM;
 import net.minecraft.Util;
@@ -10,18 +9,12 @@ import net.minecraft.server.packs.FilePackResources;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.MetadataSectionSerializer;
 import net.minecraft.server.packs.resources.IoSupplier;
-import net.minecraft.util.GsonHelper;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Set;
-import java.util.function.Predicate;
 
 public class YdmCardResourcePack extends FilePackResources
 {

@@ -5,7 +5,7 @@ import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.YdmDatabase;
 import de.cas_ual_ty.ydm.YdmItems;
 import de.cas_ual_ty.ydm.card.CardHolder;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.set.Distribution.Pull;
 import de.cas_ual_ty.ydm.set.Distribution.Pull.PullEntry;
 import de.cas_ual_ty.ydm.util.JsonKeys;
@@ -215,7 +215,7 @@ public class DistributionCardPuller extends CardPuller
     public static int countUniqueCards(List<CardHolder> list)
     {
         int uniqueCards = 0;
-        Properties lastCard = null;
+        YdmProperties lastCard = null;
         
         for(CardHolder ch : list)
         {

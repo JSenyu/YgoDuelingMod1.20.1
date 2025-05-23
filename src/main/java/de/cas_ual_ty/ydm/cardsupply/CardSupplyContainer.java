@@ -2,7 +2,7 @@ package de.cas_ual_ty.ydm.cardsupply;
 
 import de.cas_ual_ty.ydm.YdmItems;
 import de.cas_ual_ty.ydm.card.CardHolder;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.rarity.Rarities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -45,7 +45,7 @@ public class CardSupplyContainer extends AbstractContainerMenu
         }
     }
     
-    public void giveCard(Properties card, byte imageIndex)
+    public void giveCard(YdmProperties card, byte imageIndex)
     {
         player.addItem(YdmItems.CARD.get().createItemForCardHolder(new CardHolder(card, imageIndex, Rarities.SUPPLY.name)));
     }

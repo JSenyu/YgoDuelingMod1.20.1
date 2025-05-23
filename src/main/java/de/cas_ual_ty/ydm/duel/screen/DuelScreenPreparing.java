@@ -1,7 +1,5 @@
 package de.cas_ual_ty.ydm.duel.screen;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.YdmItems;
 import de.cas_ual_ty.ydm.card.CardHolder;

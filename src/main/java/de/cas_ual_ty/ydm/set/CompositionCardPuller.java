@@ -4,7 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.YdmDatabase;
-import de.cas_ual_ty.ydm.YdmItems;
 import de.cas_ual_ty.ydm.card.CardHolder;
 import de.cas_ual_ty.ydm.util.JsonKeys;
 import net.minecraft.network.chat.Component;

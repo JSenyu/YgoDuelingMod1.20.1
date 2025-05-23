@@ -7,30 +7,30 @@ import net.minecraft.network.chat.MutableComponent;
 
 import java.util.List;
 
-public class LevelMonsterProperties extends DefMonsterProperties
+public class LevelMonsterYdmProperties extends DefMonsterYdmProperties
 {
     public byte level;
     public boolean isTuner;
     
-    public LevelMonsterProperties(Properties p0, JsonObject j)
+    public LevelMonsterYdmProperties(YdmProperties p0, JsonObject j)
     {
         super(p0);
         readLevelMonsterProperties(j);
     }
     
-    public LevelMonsterProperties(Properties p0)
+    public LevelMonsterYdmProperties(YdmProperties p0)
     {
         super(p0);
         
-        if(p0 instanceof LevelMonsterProperties)
+        if(p0 instanceof LevelMonsterYdmProperties)
         {
-            LevelMonsterProperties p1 = (LevelMonsterProperties) p0;
+            LevelMonsterYdmProperties p1 = (LevelMonsterYdmProperties) p0;
             level = p1.level;
             isTuner = p1.isTuner;
         }
     }
     
-    public LevelMonsterProperties()
+    public LevelMonsterYdmProperties()
     {
     }
     

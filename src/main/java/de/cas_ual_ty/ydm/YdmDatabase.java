@@ -3,7 +3,7 @@ package de.cas_ual_ty.ydm;
 import com.google.common.io.Files;
 import com.google.gson.*;
 import de.cas_ual_ty.ydm.card.CustomCards;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.rarity.RarityEntry;
 import de.cas_ual_ty.ydm.set.CardSet;
 import de.cas_ual_ty.ydm.set.Distribution;
@@ -11,6 +11,8 @@ import de.cas_ual_ty.ydm.util.DNCList;
 import de.cas_ual_ty.ydm.util.JsonKeys;
 import de.cas_ual_ty.ydm.util.YdmIOUtil;
 import de.cas_ual_ty.ydm.util.YdmUtil;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.io.*;
 import java.net.URL;
@@ -23,9 +25,8 @@ import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class YdmDatabase
-{
-    public static final DNCList<Long, Properties> PROPERTIES_LIST = new DNCList<>((p) -> p.getId(), Long::compare);
+public class YdmDatabase {
+    public static final DNCList<Long, YdmProperties> PROPERTIES_LIST = new DNCList<>(YdmProperties::getId, Long::compare);
     private static int cardsVariantsCount = -1;
     
     public static final HashSet<String> FOUND_RARITIES = new HashSet<>();
@@ -180,7 +181,7 @@ public class YdmDatabase
         YDM.log("Reading database!");
         YdmDatabase.databaseReady = true;
         
-        YdmDatabase.PROPERTIES_LIST.add(Properties.DUMMY);
+        YdmDatabase.PROPERTIES_LIST.add(YdmProperties.DUMMY);
         YdmDatabase.SETS_LIST.add(CardSet.DUMMY);
         
         CustomCards.createAndRegisterEverything();
@@ -342,7 +343,7 @@ public class YdmDatabase
         YdmDatabase.PROPERTIES_LIST.ensureExtraCapacity(cardsFiles.length);
         
         JsonObject j;
-        Properties p;
+        YdmProperties p;
         
         for(File cardFile : cardsFiles)
         {
@@ -539,7 +540,7 @@ public class YdmDatabase
     {
         YDM.log("Finalizing database!");
         
-        for(Properties x : YdmDatabase.PROPERTIES_LIST)
+        for(YdmProperties x : YdmDatabase.PROPERTIES_LIST)
         {
             x.postDBInit();
         }
@@ -570,12 +571,12 @@ public class YdmDatabase
         return YdmDatabase.cardsVariantsCount;
     }
     
-    public static void forAllCardVariants(BiConsumer<Properties, Byte> cardImageConsumer)
+    public static void forAllCardVariants(BiConsumer<YdmProperties, Byte> cardImageConsumer)
     {
         byte i;
-        for(Properties c : YdmDatabase.PROPERTIES_LIST)
+        for(YdmProperties c : YdmDatabase.PROPERTIES_LIST)
         {
-            if(c == Properties.DUMMY)
+            if(c == YdmProperties.DUMMY)
             {
                 continue;
             }

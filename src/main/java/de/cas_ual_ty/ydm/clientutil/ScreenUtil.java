@@ -1,11 +1,8 @@
 package de.cas_ual_ty.ydm.clientutil;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
-import net.minecraft.client.gui.GuiGraphics;
-import org.joml.Matrix4f;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
 

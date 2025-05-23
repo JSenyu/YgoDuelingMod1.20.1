@@ -6,12 +6,11 @@ import de.cas_ual_ty.ydm.YdmDatabase;
 import de.cas_ual_ty.ydm.YdmItems;
 import de.cas_ual_ty.ydm.card.CardHolder;
 import de.cas_ual_ty.ydm.card.CardSleevesType;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.duel.playfield.CardPosition;
 import de.cas_ual_ty.ydm.duel.playfield.DuelCard;
 import de.cas_ual_ty.ydm.rarity.RarityEntry;
 import de.cas_ual_ty.ydm.rarity.RarityLayer;
-import de.cas_ual_ty.ydm.rarity.RarityLayerType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -112,12 +111,12 @@ public class CardRenderUtil
         CardRenderUtil.mainTextureBinder.bind(c.getMainImageResourceLocation());
     }
 
-    public static void bindInfoResourceLocation(Properties p, byte imageIndex)
+    public static void bindInfoResourceLocation(YdmProperties p, byte imageIndex)
     {
         CardRenderUtil.infoTextureBinder.bind(p.getInfoImageResourceLocation(imageIndex));
     }
 
-    public static void bindMainResourceLocation(Properties p, byte imageIndex)
+    public static void bindMainResourceLocation(YdmProperties p, byte imageIndex)
     {
         CardRenderUtil.mainTextureBinder.bind(p.getMainImageResourceLocation(imageIndex));
     }

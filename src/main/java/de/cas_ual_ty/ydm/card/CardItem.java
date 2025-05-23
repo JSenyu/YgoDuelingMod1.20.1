@@ -1,15 +1,13 @@
 package de.cas_ual_ty.ydm.card;
 
 import de.cas_ual_ty.ydm.YDM;
-import de.cas_ual_ty.ydm.YdmDatabase;
 import de.cas_ual_ty.ydm.YdmItems;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.rarity.Rarities;
-import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -59,21 +57,21 @@ public class CardItem extends Item
         return new ItemStackCardHolder(itemStack);
     }
     
-    public ItemStack createItemForCard(de.cas_ual_ty.ydm.card.properties.Properties card, byte imageIndex, String rarity, String code)
+    public ItemStack createItemForCard(YdmProperties card, byte imageIndex, String rarity, String code)
     {
         ItemStack itemStack = new ItemStack(this);
         getCardHolder(itemStack).override(new CardHolder(card, imageIndex, rarity, code));
         return itemStack;
     }
     
-    public static ItemStack createItemForCard(de.cas_ual_ty.ydm.card.properties.Properties card, byte imageIndex, String rarity)
+    public static ItemStack createItemForCard(YdmProperties card, byte imageIndex, String rarity)
     {
         ItemStack itemStack = YdmItems.CARD.get().getDefaultInstance();
         getCardHolder(itemStack).override(new CardHolder(card, imageIndex, rarity));
         return itemStack;
     }
     
-    public ItemStack createItemForCard(de.cas_ual_ty.ydm.card.properties.Properties card)
+    public ItemStack createItemForCard(YdmProperties card)
     {
         return createItemForCard(card, (byte) 0, Rarities.CREATIVE.name);
     }

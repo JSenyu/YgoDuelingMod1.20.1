@@ -2,7 +2,7 @@ package de.cas_ual_ty.ydm.deckbox;
 
 import de.cas_ual_ty.ydm.YdmDatabase;
 import de.cas_ual_ty.ydm.YdmItems;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.duel.DeckSource;
 import net.minecraft.network.chat.Component;
 
@@ -490,20 +490,20 @@ public class CustomDecks
         return list;
     }
     
-    public static void addDeckSource(List<DeckSource> decks, Supplier<DeckHolder> deckHolder, Component name, Predicate<Properties> flagShipCardChooser)
+    public static void addDeckSource(List<DeckSource> decks, Supplier<DeckHolder> deckHolder, Component name, Predicate<YdmProperties> flagShipCardChooser)
     {
         try
         {
             DeckHolder deck = deckHolder.get();
             
-            Properties card = YdmDatabase.PROPERTIES_LIST.getByIndex(0);
+            YdmProperties card = YdmDatabase.PROPERTIES_LIST.getByIndex(0);
             
             if(deck.getMainDeck() != null && deck.getMainDeckSize() > 0)
             {
                 card = deck.getMainDeck().get(0).getCard();
             }
             
-            for(Properties c : YdmDatabase.PROPERTIES_LIST)
+            for(YdmProperties c : YdmDatabase.PROPERTIES_LIST)
             {
                 if(flagShipCardChooser.test(c))
                 {

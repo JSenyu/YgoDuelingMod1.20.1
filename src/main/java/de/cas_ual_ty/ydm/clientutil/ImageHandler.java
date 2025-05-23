@@ -4,7 +4,7 @@ import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.YdmDatabase;
 import de.cas_ual_ty.ydm.card.CardHolder;
 import de.cas_ual_ty.ydm.card.CardSleevesType;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.rarity.RarityEntry;
 import de.cas_ual_ty.ydm.rarity.RarityLayer;
 import de.cas_ual_ty.ydm.set.CardSet;
@@ -47,7 +47,7 @@ public class ImageHandler
     // put raw image in the raw images folder
     // make sure all size folders (16, 32, 64... exist)
     @Deprecated // so I get a warning
-    public static void createCustomCardImages(Properties card) throws IOException
+    public static void createCustomCardImages(YdmProperties card) throws IOException
     {
         YDM.log("creating custom card images!");
         
@@ -121,7 +121,7 @@ public class ImageHandler
         }
     }
     
-    public static String getReplacementImage(Properties p, byte imageIndex, int imageSize)
+    public static String getReplacementImage(YdmProperties p, byte imageIndex, int imageSize)
     {
         String imageName = p.getImageName(imageIndex);
         String imagePathName = ImageHandler.tagImage(imageName, imageSize);
@@ -186,14 +186,14 @@ public class ImageHandler
         }
     }
     
-    public static String getInfoReplacementImage(Properties properties, byte imageIndex)
+    public static String getInfoReplacementImage(YdmProperties ydmProperties, byte imageIndex)
     {
-        return ImageHandler.getReplacementImage(properties, imageIndex, ClientProxy.activeCardInfoImageSize);
+        return ImageHandler.getReplacementImage(ydmProperties, imageIndex, ClientProxy.activeCardInfoImageSize);
     }
     
-    public static String getMainReplacementImage(Properties properties, byte imageIndex)
+    public static String getMainReplacementImage(YdmProperties ydmProperties, byte imageIndex)
     {
-        return ImageHandler.getReplacementImage(properties, imageIndex, ClientProxy.activeCardMainImageSize);
+        return ImageHandler.getReplacementImage(ydmProperties, imageIndex, ClientProxy.activeCardMainImageSize);
     }
     
     public static String getInfoReplacementImage(CardSet set)

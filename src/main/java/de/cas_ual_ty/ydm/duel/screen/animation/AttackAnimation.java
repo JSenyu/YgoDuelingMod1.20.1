@@ -1,6 +1,5 @@
 package de.cas_ual_ty.ydm.duel.screen.animation;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.clientutil.ClientProxy;
 import de.cas_ual_ty.ydm.clientutil.ScreenUtil;
 import de.cas_ual_ty.ydm.duel.playfield.CardPosition;

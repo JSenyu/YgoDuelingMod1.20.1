@@ -1,7 +1,6 @@
 package de.cas_ual_ty.ydm.card;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.clientutil.CardRenderUtil;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;

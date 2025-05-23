@@ -1,9 +1,7 @@
 package de.cas_ual_ty.ydm.duel.screen.animation;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Renderable;
-import org.jline.reader.Widget;
 
 public abstract class Animation implements Renderable
 {

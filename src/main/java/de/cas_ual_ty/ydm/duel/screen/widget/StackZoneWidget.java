@@ -1,7 +1,6 @@
 package de.cas_ual_ty.ydm.duel.screen.widget;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.clientutil.ScreenUtil;
 import de.cas_ual_ty.ydm.clientutil.widget.ITooltip;
 import de.cas_ual_ty.ydm.duel.playfield.Zone;
@@ -9,13 +8,9 @@ import de.cas_ual_ty.ydm.duel.screen.IDuelScreenContext;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Tooltip;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.function.Consumer;
 
 public class StackZoneWidget extends ZoneWidget

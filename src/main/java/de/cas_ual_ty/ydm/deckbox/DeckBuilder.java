@@ -3,7 +3,7 @@ package de.cas_ual_ty.ydm.deckbox;
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.YdmDatabase;
 import de.cas_ual_ty.ydm.card.CardHolder;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.rarity.Rarities;
 
 import java.util.HashSet;
@@ -217,7 +217,7 @@ public class DeckBuilder
         @Override
         public CardHolder get()
         {
-            Properties p = YdmDatabase.PROPERTIES_LIST.getFirst((c) -> c.getId() == id);
+            YdmProperties p = YdmDatabase.PROPERTIES_LIST.getFirst((c) -> c.getId() == id);
             
             if(p == null)
             {
@@ -248,7 +248,7 @@ public class DeckBuilder
         @Override
         public CardHolder get()
         {
-            Properties p = YdmDatabase.PROPERTIES_LIST.getFirst((c) -> c.getName().equals(name));
+            YdmProperties p = YdmDatabase.PROPERTIES_LIST.getFirst((c) -> c.getName().equals(name));
             
             if(p == null)
             {

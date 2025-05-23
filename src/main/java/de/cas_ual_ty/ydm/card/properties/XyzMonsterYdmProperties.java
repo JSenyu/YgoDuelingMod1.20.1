@@ -6,28 +6,28 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public class XyzMonsterProperties extends DefMonsterProperties
+public class XyzMonsterYdmProperties extends DefMonsterYdmProperties
 {
     public byte rank;
     
-    public XyzMonsterProperties(Properties p0, JsonObject j)
+    public XyzMonsterYdmProperties(YdmProperties p0, JsonObject j)
     {
         super(p0);
         readXyzProperties(j);
     }
     
-    public XyzMonsterProperties(Properties p0)
+    public XyzMonsterYdmProperties(YdmProperties p0)
     {
         super(p0);
         
-        if(p0 instanceof XyzMonsterProperties)
+        if(p0 instanceof XyzMonsterYdmProperties)
         {
-            XyzMonsterProperties p1 = (XyzMonsterProperties) p0;
+            XyzMonsterYdmProperties p1 = (XyzMonsterYdmProperties) p0;
             rank = p1.rank;
         }
     }
     
-    public XyzMonsterProperties()
+    public XyzMonsterYdmProperties()
     {
     }
     

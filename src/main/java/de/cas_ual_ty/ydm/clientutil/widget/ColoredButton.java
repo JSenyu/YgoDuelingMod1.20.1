@@ -1,18 +1,13 @@
 package de.cas_ual_ty.ydm.clientutil.widget;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import de.cas_ual_ty.ydm.duel.screen.widget.IWidgetToolTip;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.Button.OnPress;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-
-import java.util.List;
 
 public class ColoredButton extends Button implements IWidgetToolTip {
     public static final ResourceLocation RESOURCE =

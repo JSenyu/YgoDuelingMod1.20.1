@@ -1,7 +1,5 @@
 package de.cas_ual_ty.ydm.cardbinder;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.card.CardHolder;
 import de.cas_ual_ty.ydm.cardinventory.CardInventory;
@@ -19,7 +17,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.network.PacketDistributor;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

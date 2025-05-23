@@ -1,9 +1,7 @@
 package de.cas_ual_ty.ydm.deckbox;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import de.cas_ual_ty.ydm.YDM;
 import de.cas_ual_ty.ydm.clientutil.ScreenUtil;
-import de.cas_ual_ty.ydm.clientutil.YdmBlitUtil;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;

@@ -1,7 +1,7 @@
 package de.cas_ual_ty.ydm.cardsupply;
 
 import de.cas_ual_ty.ydm.YdmDatabase;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.NetworkEvent;
@@ -21,10 +21,10 @@ public class CardSupplyMessages
     
     public static class RequestCard
     {
-        public Properties card;
+        public YdmProperties card;
         public byte imageIndex;
         
-        public RequestCard(Properties card, byte imageIndex)
+        public RequestCard(YdmProperties card, byte imageIndex)
         {
             this.card = card;
             this.imageIndex = imageIndex;
@@ -45,7 +45,7 @@ public class CardSupplyMessages
         {
             NetworkEvent.Context context = ctx.get();
             
-            if(msg.card != null && msg.card != Properties.DUMMY)
+            if(msg.card != null && msg.card != YdmProperties.DUMMY)
             {
                 context.enqueueWork(() ->
                 {

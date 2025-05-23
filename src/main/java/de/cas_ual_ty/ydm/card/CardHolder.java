@@ -2,7 +2,7 @@ package de.cas_ual_ty.ydm.card;
 
 import com.google.gson.JsonObject;
 import de.cas_ual_ty.ydm.YdmDatabase;
-import de.cas_ual_ty.ydm.card.properties.Properties;
+import de.cas_ual_ty.ydm.card.properties.YdmProperties;
 import de.cas_ual_ty.ydm.rarity.Rarities;
 import de.cas_ual_ty.ydm.util.JsonKeys;
 import net.minecraft.nbt.CompoundTag;
@@ -14,13 +14,13 @@ import java.util.Objects;
 
 public class CardHolder implements Comparable<CardHolder>
 {
-    public static final CardHolder DUMMY = new CardHolder(Properties.DUMMY, (byte) 0, Rarities.CREATIVE.name, "DUM-MY");
-    public Properties card;
+    public static final CardHolder DUMMY = new CardHolder(YdmProperties.DUMMY, (byte) 0, Rarities.CREATIVE.name, "DUM-MY");
+    public YdmProperties card;
     public byte imageIndex;
     public String rarity;
     public String code;
     
-    public CardHolder(Properties card, byte imageIndex, String rarity, String code)
+    public CardHolder(YdmProperties card, byte imageIndex, String rarity, String code)
     {
         this.card = card;
         this.imageIndex = imageIndex;
@@ -28,7 +28,7 @@ public class CardHolder implements Comparable<CardHolder>
         this.code = code;
     }
     
-    public CardHolder(Properties card, byte imageIndex, String rarity)
+    public CardHolder(YdmProperties card, byte imageIndex, String rarity)
     {
         this(card, imageIndex, rarity, card.getId() + "_" + imageIndex);
     }
@@ -106,12 +106,12 @@ public class CardHolder implements Comparable<CardHolder>
         code = cardHolder.code;
     }
     
-    public Properties getCard()
+    public YdmProperties getCard()
     {
         return card;
     }
     
-    public void setCard(Properties card)
+    public void setCard(YdmProperties card)
     {
         this.card = card;
     }
@@ -152,7 +152,7 @@ public class CardHolder implements Comparable<CardHolder>
         
         if(card == null)
         {
-            card = Properties.DUMMY;
+            card = YdmProperties.DUMMY;
         }
         
         imageIndex = nbt.getByte(JsonKeys.IMAGE_INDEX);
@@ -162,7 +162,7 @@ public class CardHolder implements Comparable<CardHolder>
     
     public void writeCardHolderToNBT(CompoundTag nbt)
     {
-        if(card != Properties.DUMMY)
+        if(card != YdmProperties.DUMMY)
         {
             nbt.putLong(JsonKeys.ID, card.getId());
         }
@@ -178,7 +178,7 @@ public class CardHolder implements Comparable<CardHolder>
         
         if(card == null)
         {
-            card = Properties.DUMMY;
+            card = YdmProperties.DUMMY;
         }
         
         imageIndex = json.get(JsonKeys.IMAGE_INDEX).getAsByte();
@@ -188,7 +188,7 @@ public class CardHolder implements Comparable<CardHolder>
     
     public void writeToJson(JsonObject json)
     {
-        if(card != Properties.DUMMY)
+        if(card != YdmProperties.DUMMY)
         {
             json.addProperty(JsonKeys.ID, card.getId());
         }

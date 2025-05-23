@@ -22,38 +22,38 @@ public class YdmUtil
 {
     private static final int[] POW_2 = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
     
-    public static Properties buildProperties(JsonObject j)
+    public static YdmProperties buildProperties(JsonObject j)
     {
-        Properties p0 = new Properties(j);
+        YdmProperties p0 = new YdmProperties(j);
         
         if(p0.getIsSpell())
         {
-            return new SpellProperties(p0, j);
+            return new SpellYdmProperties(p0, j);
         }
         else if(p0.getIsTrap())
         {
-            return new TrapProperties(p0, j);
+            return new TrapYdmProperties(p0, j);
         }
         else if(p0.getIsMonster())
         {
-            MonsterProperties p1 = new MonsterProperties(p0, j);
+            MonsterYdmProperties p1 = new MonsterYdmProperties(p0, j);
             
             if(p1.getHasDef())
             {
-                p1 = new DefMonsterProperties(p1, j);
+                p1 = new DefMonsterYdmProperties(p1, j);
                 
                 if(p1.getHasLevel())
                 {
-                    return new LevelMonsterProperties(p1, j);
+                    return new LevelMonsterYdmProperties(p1, j);
                 }
                 else if(p1.getIsXyz())
                 {
-                    return new XyzMonsterProperties(p1, j);
+                    return new XyzMonsterYdmProperties(p1, j);
                 }
             }
             else if(p1.getIsLink())
             {
-                return new LinkMonsterProperties(p1, j);
+                return new LinkMonsterYdmProperties(p1, j);
             }
         }
         

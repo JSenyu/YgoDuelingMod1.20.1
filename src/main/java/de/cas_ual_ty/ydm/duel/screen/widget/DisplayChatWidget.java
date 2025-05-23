@@ -1,7 +1,6 @@
 package de.cas_ual_ty.ydm.duel.screen.widget;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import de.cas_ual_ty.ydm.clientutil.ClientProxy;
 import de.cas_ual_ty.ydm.clientutil.ScreenUtil;
 import net.minecraft.client.Minecraft;

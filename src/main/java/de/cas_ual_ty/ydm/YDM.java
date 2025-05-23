@@ -1,6 +1,5 @@
 package de.cas_ual_ty.ydm;
 
-import de.cas_ual_ty.ydm.card.CardItem;
 import de.cas_ual_ty.ydm.cardbinder.CardBinderMessages;
 import de.cas_ual_ty.ydm.cardbinder.UUIDHolder;
 import de.cas_ual_ty.ydm.cardinventory.JsonCardsManager;
@@ -20,9 +19,7 @@ import de.cas_ual_ty.ydm.duel.network.DuelMessageHeaders;
 import de.cas_ual_ty.ydm.duel.network.DuelMessages;
 import de.cas_ual_ty.ydm.duel.playfield.ZoneType;
 import de.cas_ual_ty.ydm.duel.playfield.ZoneTypes;
-import de.cas_ual_ty.ydm.rarity.Rarities;
 import de.cas_ual_ty.ydm.serverutil.YdmCommand;
-import de.cas_ual_ty.ydm.set.CardSetItem;
 import de.cas_ual_ty.ydm.simplebinder.SimpleBinderItem;
 import de.cas_ual_ty.ydm.task.WorkerManager;
 import de.cas_ual_ty.ydm.util.CooldownHolder;
@@ -31,11 +28,9 @@ import de.cas_ual_ty.ydm.util.YDMItemHandler;
 import de.cas_ual_ty.ydm.util.YdmIOUtil;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.Tag;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.MinecraftForge;
